@@ -20,6 +20,7 @@ let addProduct = async (req, res) => {
   await cloudinary.uploader.upload(image, (err, result) => {
     if (err) {
       res.send(err);
+      
     } else {
       const url = result.secure_url;
       console.log(url);
@@ -39,6 +40,7 @@ let addProduct = async (req, res) => {
         .save()
         .then((product) => {
         //  res.json(product);
+        
         })
         .catch((err) => console.log(err));
     }
