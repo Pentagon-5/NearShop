@@ -1,19 +1,25 @@
-<head>
-    
-</head>
+
+
+  <head>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  </head>
+
 <body>
     <div><h3>Add Your Product</h3></div>
     <br><br>
 <div>
+  <form  [formGroup]="addProduct" (ngSubmit)="onSubmit()" >
     <div class="container">
     <div class="row" >
         <div class="col">
             <label>Title:</label>
-          <input type="text" class="form-control" placeholder="Title" aria-label="Title">
+          <input type="text" class="form-control" name="title" formControlName="title" placeholder="Title"  required>
         </div>
         <div class="col">
             <label>Description:</label>
-          <input type="text" class="form-control" placeholder="Description" aria-label="Description">
+          <input type="text" class="form-control" name="Description" formControlName="Description" placeholder="Description" required>
         </div>
         
       </div>
@@ -21,11 +27,11 @@
       <div class="row" >
         <div class="col">
             <label>Price:</label>
-          <input type="text" class="form-control" placeholder="Price" aria-label="Price">
+          <input type="text" class="form-control" name="Price" formControlName="Price"   placeholder="Price" aria-label="Price" required>
         </div>
         <div class="col">
             <label>Quantity:</label>
-            <select class="form-control"  id="basicSelect" >
+            <select class="form-control"  id="basicSelect" name="Quantity" formControlName="Quantity" required>
                 <option disabled>Select Quantity </option>
                 <option  [value]=""></option>
                 <option  [value]="1">1</option>
@@ -53,7 +59,15 @@
       <br>
       <div class="row">
         <label>Select an image:</label>
-        <input type="file"  />
+        <input type="file"   name="image" formControlName="image" required/>
+      </div> 
+
+      
+      <div class="row">
+
+        <button type="submit"   class="btn btn-primary">Save</button>
       </div>
     </div>
+  </form>
+  <div id='map'  style='width: 90%; height: 350px;margin: 0 auto;'> </div>
 </div> </body>
