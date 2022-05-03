@@ -11,7 +11,9 @@ import * as mapboxgl from 'mapbox-gl';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit {
- 
+  public el = new mapboxgl.Marker();
+   private Latiude= 10.196506147691451;
+   private Longitude = 36.792635314317465;
 
   constructor(private http :HttpClient ,private router:Router ,
     private service :ProductServiceService) { 
@@ -30,15 +32,44 @@ export class AddProductComponent implements OnInit {
     onSubmit(){
       console.log(this.addProduct);
        this.service.AddProduct(this.addProduct.value.title,this.addProduct.value.Description,this.addProduct.value.Price,this.addProduct.value.Quantity,
-        this.addProduct.value.image).subscribe((res :any)=>{
+        this.addProduct.value.image, this.Longitude,  this.Latiude).subscribe((res :any)=>{
           console.log(res);
+        //  console.log(this.Longitude,this.Latiude);
+          
+          this.addProduct.reset();
+            this.Longitude = 0 ;
+            this.Latiude = 0    ;
+            
           
         })
       
     }
-    ngOnInit():void{
-      
+    
+    mapbox = {
+      accessToken: 'pk.eyJ1IjoibWlsaWZyYWoiLCJhIjoiY2ttdGs1aTIxMHNkNTJwczEwYjhvMnRpNSJ9.iK6jtPrKF5BlQbsIOf2aRg',
     }
+
+  ngOnInit(): void {
+    (mapboxgl as typeof mapboxgl).accessToken
+    = this.mapbox.accessToken;
+  let  map:mapboxgl.Map
+      map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v10',
+    zoom: 9,
+    center: [this.Latiude ,this.Longitude ],
+  }); 
   
+  // Add map controls
+  map.on('click', hello => {
+    this.Longitude = hello.lngLat.lng;
+    this.Latiude = hello.lngLat.lat;
+  //  console.log(this.Longitude,this.Latiude);
+    
+    this.el.setLngLat([hello.lngLat.lng, hello.lngLat.lat])
+      .addTo(map);
+  });
+
+  }
 
 }
