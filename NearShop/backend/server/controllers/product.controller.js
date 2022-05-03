@@ -4,9 +4,9 @@ const cloudinary = require("../utils/cloudinary");
 
 
 var add = function (req, res) {
-  let { title, description, image_url,price, quantite, user_id } = req.body;
-
-  Product.insertMany({ title, description, image_url,price, quantite, user_id })
+  let { title, description, image_url,price, quantite ,Longitude , Latiude,user_id} = req.body;
+  
+  Product.insertMany({ title, description, image_url,price, quantite,Longitude ,Latiude, user_id })
     .then((product) => {
       res.status(200).send(product);
     })
