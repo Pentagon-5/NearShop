@@ -7,12 +7,14 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AboutUsComponent } from './about-us/about-us.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     AddProductComponent,
-    HomePageComponent
+    HomePageComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
