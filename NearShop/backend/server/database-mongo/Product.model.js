@@ -7,6 +7,9 @@ const ProductSchema = new mongoose.Schema({
     image_url: String,
     quantite: Number,
     price: Number,
+  
+    Longitude  : String,
+    Latiude  : String,
     user_id: String,
   });
   
