@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { MyProductComponent } from './my-product/my-product.component';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { MyProductComponent } from './my-product/my-product.component';
     AboutUsComponent,
     SearchComponent,
     CommentComponent,
-    MyProductComponent
+    MyProductComponent,
+    FooterComponent
 
   ],
   imports: [
