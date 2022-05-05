@@ -1,0 +1,114 @@
+#my{
+    margin-left:45%
+    }
+   
+    .body {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 46px;
+        grid-row-gap: 37px;
+        background-color: rgb(109, 152, 152);
+    }
+    .cardcontainer {
+        width: 350px;
+        height: 500px;
+        background-color: rgb(235, 217, 116);
+        margin-left: auto;
+        margin-right: auto;
+        transition: 0.3s
+    }
+    .cardcontainer:hover {
+        box-shadow: 0 0 45px gray
+    }
+    .photo2 {
+        height: 300px;
+        width: 100%
+    }
+    .photo2 img {
+        height: 100%;
+        width: 100%
+    }
+    .content {
+        width: 80%;
+        height: 100px;
+        margin-left:137px;
+        position: relative;
+        top: -33px;
+        font-family: 'Tapestry', cursive;
+    }
+    
+    .txt4 {
+        font-size: 27px;
+        position: relative;
+        top: 33px;
+        font-family: 'Tapestry', cursive;
+    }
+
+    .txt2 {
+        position: relative;
+        top: 10px;
+        font-family: 'Tapestry', cursive;
+    }
+    /* .cardcontainer:hover>.photo { */
+        /* height: 200px;
+        animation: move1 0.5s ease both
+    }
+    @keyframes move1 {
+        0% {
+            height: 300px
+        }
+        100% {
+            height: 200px
+        }
+    }
+    .cardcontainer:hover>.content {
+        height: 200px
+    } */
+    /* .footer1 {
+        width: 80%;
+        height: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: white;
+        position: relative;
+        top: -15px
+    } */
+    .btn {
+        position: relative;
+        top: 20px;
+        border:none;
+        border-color: #f5f2f1;
+        border-radius: 12px;
+        margin-left: 67px;
+        background-color: aliceblue;
+    }
+    /* #heart {
+        cursor: pointer
+    } */
+   
+    /* .fa-gratipay {
+        margin-right: 10px;
+        transition: 0.5s
+    } */
+    /* .fa-gratipay:hover {
+        color: #E74C3C
+    } */
+    .txt3 {
+        color: gray;
+        position: relative;
+        top: 18px;
+        font-size: 14px;
+        margin-right: 15px;
+        
+    }
+    .comments {
+        float: right;
+        cursor: pointer
+    }
+
+   
+    .fa-clock,
+    .fa-comments {
+        margin-right: 7px
+    }
