@@ -1,12 +1,12 @@
 <div>
   <h1 style="margin-left: 0%">here our all Products</h1>
   <p>search</p>
-     <input class="mySearch" type="text" v-model="search" placeholder="search product" />
+     <input class="mySearch" type="text" [(ngModel)]="search" placeholder="search product" />
    <i class="mySearch fa-solid fa-magnifying-glass"></i>
   <div class="home2">
     
     <br />
-    <div *ngFor="let element of data" >
+    <div *ngFor="let element of filtredProduct" [(ngModel)]="element._id">
       <div class="a-box">
         <div class="img-container">
           <div class="img-inner">
@@ -24,7 +24,7 @@
           </div>
 
           <button class="plus" (click)="increment()">+</button>
-          <input class="quantity" :value="amount" />
+          <input class="quantity" [value]="amount" />
           <button class="minus" (click)="decrement()">-</button>
           <a href="#" class="product-button">Add to Card</a>
           <div>

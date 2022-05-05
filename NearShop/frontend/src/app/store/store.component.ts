@@ -9,7 +9,7 @@ import axios from "axios";
 export class StoreComponent implements OnInit {
   data:any
   amount:any= 0
-     search:any=""
+     search:any
   
   constructor() { }
 
@@ -30,7 +30,7 @@ export class StoreComponent implements OnInit {
   decrement() {
     this.amount--;
   }
-  filtredProduct(){
+ get filtredProduct(){
     return this.data.filter((element:any)=>{
       return element.title.match(this.search)
     })
