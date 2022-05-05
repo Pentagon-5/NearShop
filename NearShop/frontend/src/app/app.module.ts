@@ -9,16 +9,20 @@ import { SearchComponent } from './search/search.component';
 import { CommentComponent } from './comment/comment.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AboutUsComponent } from './about-us/about-us.component';
 import { MyProductComponent } from './my-product/my-product.component';
+import {StoreComponent} from'./store/store.component'
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     AddProductComponent,
     HomePageComponent,
+    AboutUsComponent,
     SearchComponent,
     CommentComponent,
-    MyProductComponent
+    MyProductComponent,
+    StoreComponent
 
   ],
   imports: [
