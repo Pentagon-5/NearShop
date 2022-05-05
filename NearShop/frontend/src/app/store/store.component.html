@@ -1,0 +1,37 @@
+<div>
+  <h1 style="margin-left: 0%">here our all Products</h1>
+  <p>search</p>
+     <input class="mySearch" type="text" [(ngModel)]="search" placeholder="search product" />
+   <i class="mySearch fa-solid fa-magnifying-glass"></i>
+  <div class="home2">
+    
+    <br />
+    <div *ngFor="let element of filtredProduct" [(ngModel)]="element._id">
+      <div class="a-box">
+        <div class="img-container">
+          <div class="img-inner">
+            <div class="inner-skew">
+              <img :src="element.image_url" />
+            </div>
+          </div>
+        </div>
+        <div class="text-container">
+          <h3>Name:{{ element.title }}</h3>
+          <div>
+            <p>Description:{{ element.description }}</p>
+
+            <p>Price:{{ element.price }}</p>
+          </div>
+
+          <button class="plus" (click)="increment()">+</button>
+          <input class="quantity" [value]="amount" />
+          <button class="minus" (click)="decrement()">-</button>
+          <a href="#" class="product-button">Add to Card</a>
+          <div>
+            <app-comment [product_id]="element._id"></app-comment>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
