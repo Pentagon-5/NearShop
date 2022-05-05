@@ -5,9 +5,9 @@
           <div> 
             <div style="height: 5px;background-color:black ; margin-top: 20px;"></div>
             <p>comments</p>
-            <div class="comment" *ng-for="let comment of comments" v-bind:key="comment._id">
+            <div class="comment" *ngFor="let comment of comments" >
               <span style="border:1px solid;width:100%;" >
-              <p>{{comment.user_id}}</p>
+              <!-- <p>{{comment.user_id}}</p> -->
                 {{ comment.description }}
 
                 <a
